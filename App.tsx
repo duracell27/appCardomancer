@@ -1,33 +1,28 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
+import WelcomeScreen from './screens/WelcomeScreen';
+import SignInScreen from './screens/SignInScreen';
+import SignUpScreen from './screens/SignUpScreen';
+
+const Stack = createStackNavigator();
 
 export default function App(): React.JSX.Element {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Привіт!</Text>
-      <Text style={styles.subtitle}>Cardomancer готовий до розробки! 🃏</Text>
+    <NavigationContainer>
       <StatusBar style="light" />
-    </View>
+      <Stack.Navigator
+        initialRouteName="Welcome"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#ffffff',
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  subtitle: {
-    color: '#10b981',
-    fontSize: 16,
-    textAlign: 'center',
-  },
-});
