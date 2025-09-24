@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Cardomancer",
+    "slug": "cardomancer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#000000"
+      }
+    },
+    "web": {}
+  }
+}
