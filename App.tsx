@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-export default function App() {
+export default function App(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Привіт!</Text>
